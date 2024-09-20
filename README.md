@@ -40,6 +40,10 @@ docker run --restart always -d -it --name oryx -v $HOME/data:/data \
   -p 8080:8080/tcp -p 8000:8000/udp -p 10080:10080/udp \
   ossrs/oryx:5
 ```
+安装后输入以下网址打开
+```bash
+http://你的服务器ip:2022/mgmt
+```
 
 > Important: Remember to mount the `/data` volume to avoid losing data when the container restarts. For instance, 
 > if you mount `/data` to `$HOME/data`, all data will be stored in the `$HOME/data` folder. Be sure to modify this 
