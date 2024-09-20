@@ -26,8 +26,17 @@ automatic HTTPS, and an easy-to-use HTTP Open API.
 Run Oryx in one docker, then open http://localhost in browser:
 
 ```bash
+apt-get update
+```
+
+```bash
+apt-get install docker.io
+```
+
+```bash
 docker run --restart always -d -it --name oryx -v $HOME/data:/data \
-  -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
+  -p 2022:2022 -p 1935:1935/tcp -p 1985:1985/tcp \
+  -p 8080:8080/tcp -p 8000:8000/udp -p 10080:10080/udp \
   ossrs/oryx:5
 ```
 
